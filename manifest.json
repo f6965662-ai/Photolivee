@@ -1,0 +1,10 @@
+{
+  "name": "Free Gift Voucher",
+  "short_name": "Voucher",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff0000",
+  "orientation": "portrait",
+  "icons": []
+}

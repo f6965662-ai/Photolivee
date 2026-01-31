@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ PERINGATAN SISTEM ⚠️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen-lock"></div>
+        
+        <div class="popup" id="ransomPopup">
+            <div class="popup-header">
+                <h2>🔒 HP ANDA TELAH DIKENKRIPSI!</h2>
+                <p class="subtitle">Oleh: WANZTMVAN RANSOMWARE</p>
+            </div>
+            
+            <div class="popup-content">
+                <div class="warning-icon">☠️</div>
+                <p class="message">
+                    Semua data pribadi Anda telah dikunci!<br>
+                    Anda memiliki <span class="timer">05:00</span> untuk memasukkan kode.
+                </p>
+                
+                <div class="code-input">
+                    <input type="text" id="codeInput" placeholder="Masukkan 6 digit kode..." maxlength="6">
+                    <button onclick="checkCode()">SUBMIT</button>
+                </div>
+                
+                <p class="hint">Hint: Kode adalah tanggal ultah pembuat (ddmmyy)</p>
+                
+                <div class="countdown">
+                    <div class="time-bar" id="timeBar"></div>
+                    <p class="threat">⏰ WAKTU HABIS = DATA TERHAPUS PERMANEN!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="scarySound" loop>
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-horror-laugh-582.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

